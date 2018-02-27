@@ -51,9 +51,6 @@ t_POTENCIADOR = r'(\*{2} | \^)'
 t_ASIGNADOR = r'='
 
 
-
-
-
 def t_INCLUYENTE(t):
     r'incluyente'
     return t
@@ -111,8 +108,6 @@ def t_IDENTIFICADOR(t):
     r'\w+(_\d\w)*'
     return t
 
-
-
 def t_newline(t):
     r'\n+'
     t.lexer.lineno += len(t.value)
@@ -121,7 +116,6 @@ def t_comments(t):
     r'\//'
     t.lexer.lineno += t.value.count('\n+')
     print("Comentario de multiple linea")
-
 
 
 # Prueba de ingreso
