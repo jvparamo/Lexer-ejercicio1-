@@ -9,10 +9,10 @@ reservada = (
     'UTILIZAR',
     'MOSTRAR',
     'LEER',
-   'OPTENER',
-   'CADENA',
-  'DEVUELVE',
-   'VACIO',
+    'OPTENER',
+    'CADENA',
+    'DEVUELVE',
+    'VACIO',
     'ENTERO',
     'SALTO',
 )
@@ -28,11 +28,11 @@ tokens = reservada + (
     'MODULO',
 
     
-   'SI',
+    'SI',
     'YSINO',
     
-   'MIENTRAS',
-   'PARA',
+    'MIENTRAS',
+    'PARA',
   
     
     
@@ -124,13 +124,12 @@ def prueba(data):
 
     analizador = lex.lex()
     analizador.input(data)
-
     resultado_lexema.clear()
+    
     while True:
         tok = analizador.token()
         if not tok:
             break
-        
         estado = "Linea:  {:4}   Tipo: {:16}   Valor: {:16}    Posicion: {:4}".format(str(tok.lineno),str(tok.type) ,str(tok.value), str(tok.lexpos) )
         resultado_lexema.append(estado)
     return resultado_lexema # instanciamos el analizador lexico
