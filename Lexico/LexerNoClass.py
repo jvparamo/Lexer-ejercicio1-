@@ -27,16 +27,29 @@ tokens = reservada + (
     'POTENCIADOR',
     'MODULO',
 
-    
     'SI',
     'YSINO',
     
     'MIENTRAS',
     'PARA',
-  
+    'Y',
+    'O',
+    'NO',
+    'ELMENOR',
+    'MENOROIGUAL',
+    'ELMAYOR',
+    'MAYOR0IGUAL',
+    'IGUAL',
+    'DESIGUAL',
     
-    
-    
+    'HASHTAG',
+    'PARENIZQ',
+    'PARENDER',
+    'LLAVEIZQ',
+    'LLAVEDER',
+    'PUNTOYCOMA',
+    'COMA',
+    'COMADOB',
 )
 
 # Reglas de Expresiones Regualres para token de Contexto simple
@@ -118,21 +131,6 @@ def t_comments(t):
     print("Comentario de multiple linea")
 
 
-# Prueba de ingreso
-def prueba(data):
-    global resultado_lexema
-
-    analizador = lex.lex()
-    analizador.input(data)
-    resultado_lexema.clear()
-    
-    while True:
-        tok = analizador.token()
-        if not tok:
-            break
-        estado = "Linea:  {:4}   Tipo: {:16}   Valor: {:16}    Posicion: {:4}".format(str(tok.lineno),str(tok.type) ,str(tok.value), str(tok.lexpos) )
-        resultado_lexema.append(estado)
-    return resultado_lexema # instanciamos el analizador lexico
 
 
 
