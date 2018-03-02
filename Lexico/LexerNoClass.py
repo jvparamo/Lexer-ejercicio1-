@@ -44,7 +44,7 @@ tokens = reservada + (
     'PARENDER',
     'LLAVEIZQ',
     'LLAVEDER',
-    'FINALDESENTENCIA',
+    'FINDESENTENCIA',
   
 )
 
@@ -68,7 +68,7 @@ t_PARENIZQ = r'\('
 t_PARENDER = r'\)'
 t_LLAVEIZQ = r'{'
 t_LLAVEDER = r'}'
-t_ignore =' \t'
+t_ignore =r'\t'
 
 
 
