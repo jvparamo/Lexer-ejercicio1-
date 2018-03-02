@@ -161,10 +161,11 @@ class AnalizadorLexico:
         return resultado_lexema
         
 analizador=lex.lex()
-a=analizadorLexico(tokens)
+a=AnalizadorLexico(tokens)
 
 arc=open('holamundo.arc','r')
-print(a.prueba)
+data=arc.read()
+print(a.prueba(data))
      
 
 
