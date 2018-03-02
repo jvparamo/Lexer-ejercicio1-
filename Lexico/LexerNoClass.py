@@ -58,6 +58,18 @@ t_MODULO = r'\%'
 t_POTENCIADOR = r'(\*{2} | \^)'
 t_ASIGNADOR = r'='
 
+t_Y= r'\&\&'
+t_O = r'\|{2}'
+t_NEGACION= r'\!'
+t_ELMENOR = r'<'
+t_ELMAYOR = r'>'
+t_FINDESENTENCIA = ';'
+t_PARENIZQ = r'\('
+t_PARENDER = r'\)'
+t_LLAVEIZQ = r'{'
+t_LLAVEDER = r'}'
+t_ignore =' \t'
+
 
 
 def t_INCLUIR(t):
