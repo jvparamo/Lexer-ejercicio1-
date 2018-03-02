@@ -5,7 +5,7 @@ resultado_lexema = []
 
 reservada = (
     # Palabras Reservadas
-    'INCLUYENTE',
+    'INCLUIR',
     'MOSTRAR',
     'LEER',
     'OPTENER',
@@ -60,7 +60,7 @@ t_ASIGNADOR = r'='
 
 
 
-def t_INCLUYENTE(t):
+def t_INCLUIR(t):
     r'incl'
     return t
 
@@ -113,6 +113,22 @@ def t_IDENTIFICADOR(t):
     r'[a-zA-Z_][a-zA-Z0-9]*'
     return t
 
+def t_MENOROIGUAL(t):
+    r'<='
+    return t
+
+def t_MATOROIGUAL(t):
+    r'>='
+    return t
+
+def t_IGUAL(t):
+    r'=='
+    return t
+
+def t_DESIGUAL(t):
+    r'!='
+    return t
+
 def t_newline(t):
     r'\n+'
     t.lexer.lineno += len(t.value)
@@ -127,7 +143,29 @@ def t_error(t):
     resultado_lexema.append(estado)
     t.lexer.skip(1)
 
+class AnalizadorLexico:
+    def __init__(self,tokens):
+        self.tokens=tokens
+    
+    def prueba(self,data):
+        global resultado_lexema
+        analizador.input(data)
+        resultado_lexema.clear()
+        
+        while True:
+            tok=analizador.token()
+            if not tok:
+                break
+            estado="Linea:  {:4}   Tipo: {:16}   Valor: {:16}    Posicion: {:4}".format(str(tok.lineno),str(tok.type) ,str(tok.value), str(tok.lexpos) )
+            resultado_lexema.append(estado)
+        return resultado_lexema
+        
+analizador=lex.lex()
+a=analizadorLexico(tokens)
 
+arc=open('holamundo.arc','r')
+print(a.prueba)
+     
 
 
 
