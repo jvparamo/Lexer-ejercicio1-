@@ -1,3 +1,9 @@
-q & e = 23
-e = 23 - 4
-q = 2 ** 2
+incl 
+msg 
+rec sum
+sum = sum ++
+para i=0; i<sum i++;
+$jk
+mtras sum >= 3;
+
+
