@@ -172,12 +172,28 @@ class AnalizadorLexico:
             resultado_lexema.append(estado)
         return resultado_lexema
         
-analizador=lex.lex()
+analizador = lex.lex()
 a=AnalizadorLexico(tokens)
 
 arc=open('holamundo.arc','r')
 data=arc.read()
-print(a.prueba(data))
+        
+a.prueba(data)
+ventana=Tk()
+ventana.title('Analizador lexico')
+ 
+texto = Label(None,text='*ANALIZIS FINALIZADO*')
+texto.pack(expand=YES, fill=BOTH)
+pb = ttk.Progressbar(None, mode='determinate')
+pb.pack(expand=True,fill=X)
+pb.step(99.9)
+
+for tok in resultado_lexema:
+    texto = Label(None,text=tok )
+    texto.pack(expand=YES, fill=BOTH)
+ #abre la ventana
+
+texto.mainloop()
      
 
 
