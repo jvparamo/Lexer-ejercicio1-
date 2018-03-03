@@ -151,7 +151,7 @@ def t_comments(t):
 
 def t_error(t):
     global resultado_lexema
-    estado = "Token no valido en la Linea: {:4}     Valor: {:16}    Posicion: {:4}".format(str(t.lineno), str(t.value),str(t.lexpos))
+    estado = "Token no valido en la Linea: {:4}     Valor: {:16}    Posicion: {:4}".format(str(t.lineno), str(t.value[0]),str(t.lexpos))
     resultado_lexema.append(estado)
     t.lexer.skip(1)
 
