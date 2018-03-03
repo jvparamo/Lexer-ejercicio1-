@@ -36,7 +36,7 @@ tokens = reservada + (
     'ELMENOR',
     'MENOROIGUAL',
     'ELMAYOR',
-    'MAYOR0IGUAL',
+    'MAYOROIGUAL',
     'IGUAL',
     'DESIGUAL',
     
@@ -129,7 +129,7 @@ def t_MENOROIGUAL(t):
     r'<='
     return t
 
-def t_MATOROIGUAL(t):
+def t_MAYOROIGUAL(t):
     r'>='
     return t
 
