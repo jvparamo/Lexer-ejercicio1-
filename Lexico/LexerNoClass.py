@@ -12,7 +12,7 @@ reservada = (
     'INCLUIR',
     'MOSTRAR',
     'LEER',
-    'OPTENER',
+    'NUMERICO',
     'DEVUELVE',
     'VACIO',
     'ENTERO',
@@ -88,8 +88,8 @@ def t_LEER(t):
     r'rec'
     return t
 
-def t_OPTENER(t):
-    r'opt'
+def t_NUMERICO(t):
+    r'num'
     return t
 
 def t_BOOL(t):
