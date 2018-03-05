@@ -163,6 +163,9 @@ class AnalizadorLexico:
     def __init__(self,tokens):
         self.tokens=tokens
     
+    def getTokens(self):
+        return self.tokens
+    
     def prueba(self,data):
         global resultado_lexema
         analizador.input(data)
