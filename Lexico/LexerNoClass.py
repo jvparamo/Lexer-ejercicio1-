@@ -4,11 +4,11 @@ from tkinter import ttk
 
 import ply.lex as lex
 
-# resultado del analisis
+
 resultado_lexema = []
 
 reservada = (
-    # Palabras Reservadas
+   
     'INCLUIR',
     'MOSTRAR',
     'LEER',
@@ -52,7 +52,7 @@ tokens = reservada + (
   
 )
 
-# Reglas de Expresiones Regualres para token de Contexto simple
+
 
 t_SUMADOR = r'\&'
 t_RESTANDO = r'-'
@@ -203,7 +203,7 @@ pb.step(99.9)
 for tok in resultado_lexema:
     texto = Label(None,text=tok )
     texto.pack(expand=YES, fill=BOTH)
- #abre la ventana
+
 
 texto.mainloop()
      
