@@ -191,21 +191,25 @@ arc=open('holamundo.arc','r')
 data=arc.read()
         
 a.prueba(data)
+
 ventana=Tk()
 ventana.title('Analizador lexico')
+ventana.minsize(width=600,height=500)
+
+scrollbar = Scrollbar(ventana)
+scrollbar.pack(side=RIGHT, fill=Y)
+
+listbox = Listbox(ventana)
+listbox.pack()
+listbox.place(relwidth=0.98, relheight=1)
+
+for toke in resultado_lexema:
+    listbox.insert(END, toke)
+
+listbox.config(yscrollcommand=scrollbar.set)
+scrollbar.config(command=listbox.yview)
  
-texto = Label(None,text='*ANALIZIS FINALIZADO*')
-texto.pack(expand=YES, fill=BOTH)
-pb = ttk.Progressbar(None, mode='determinate')
-pb.pack(expand=True,fill=X)
-pb.step(99.9)
-
-for tok in resultado_lexema:
-    texto = Label(None,text=tok )
-    texto.pack(expand=YES, fill=BOTH)
-
-
-texto.mainloop()
+ventana.mainloop()
      
 
 
