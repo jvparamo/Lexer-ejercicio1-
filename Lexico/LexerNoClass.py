@@ -182,6 +182,7 @@ class AnalizadorLexico:
                 print('*'*i, end='')
                 i=i+1
         print('|')  
+        print('*ANALIZIS FINALIZADO*')
         return resultado_lexema
         
 analizador = lex.lex()
@@ -203,6 +204,7 @@ listbox = Listbox(ventana)
 listbox.pack()
 listbox.place(relwidth=0.98, relheight=1)
 
+listbox.insert(END, '                                                                                *ANALIZIS FINALIZADO*')
 for toke in resultado_lexema:
     listbox.insert(END, toke)
 
