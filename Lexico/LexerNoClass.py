@@ -170,13 +170,18 @@ class AnalizadorLexico:
         global resultado_lexema
         analizador.input(data)
         resultado_lexema.clear()
-        
+        i=1
+        print('progreso |', end='')
         while True:
             tok=analizador.token()
             if not tok:
                 break
             estado="Linea:  {:4}   Tipo: {:16}   Valor: {:16}    Posicion: {:4}".format(str(tok.lineno),str(tok.type) ,str(tok.value), str(tok.lexpos) )
             resultado_lexema.append(estado)
+            if i<=10:
+                print('*'*i, end='')
+                i=i+1
+        print('|')  
         return resultado_lexema
         
 analizador = lex.lex()
